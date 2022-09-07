@@ -1,0 +1,26 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'sliderswiper.css' | asset_url | stylesheet_tag }}
+
+<div class="swiper">
+	<h2>{{ section.settings.title | escape }}</h2>
+	<div class="swiper-wrapper">
+
+	</div>
+</div>
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+
+
+{
+	"name": "Slider",
+	"class": "swiper",
+	"settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Heading",
+			"default": "Logo list"
+		},
+	],
+	"blocks": []
+}
