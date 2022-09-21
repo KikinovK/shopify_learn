@@ -1,10 +1,12 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 {{ 'sliderswiper.css' | asset_url | stylesheet_tag }}
 
-<div class="swiper">
-	<h2>{{ section.settings.title | escape }}</h2>
-	<div class="swiper-wrapper">
+<div class="page-width section-{{ section.id }}-padding isolate">
+	<div class="swiper">
+		<h2>{{ section.settings.title | escape }}</h2>
+		<div class="swiper-wrapper">
 
+		</div>
 	</div>
 </div>
 
@@ -13,7 +15,7 @@
 {% schema %}
 {
 	"name": "Slider",
-	"class": "swiper",
+	"class": "swiper__section",
 	"settings": [
 		{
 			"type": "text",
@@ -23,14 +25,14 @@
 		}
 	],
 	"blocks": [],
-    "presets": [
-      {
-        "name": "Slider",
-        "settings": {
-          "title": "Slider"
-        },
-        "blocks": []
-      }
-    ]
+	"presets": [
+		{
+			"name": "Slider title",
+			"settings": {
+				"title": "Slider"
+			},
+			"blocks": []
+		}
+	]
 }
 {% endschema %}
