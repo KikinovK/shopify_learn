@@ -1,7 +1,7 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 {{ 'sliderswiper.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width section-{{ section.id }}-padding isolate">
+<div class="page-width isolate">
 	<div class="swiper">
 		<h2>{{ section.settings.title | escape }}</h2>
 		<div class="swiper-wrapper">
@@ -16,6 +16,7 @@
 {
 	"name": "Slider",
 	"class": "swiper__section",
+  "tag": "section",
 	"settings": [
 		{
 			"type": "text",
@@ -24,14 +25,34 @@
 			"default": "Logo list"
 		}
 	],
-	"blocks": [],
+	"blocks": [
+		{
+			"type": "slide",
+			"name": "slide_name",
+			"limit": 5,
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Image"
+				}
+			]
+		}
+	],
 	"presets": [
 		{
 			"name": "Slider title",
 			"settings": {
 				"title": "Slider"
 			},
-			"blocks": []
+			"blocks": [
+				{
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+			]
 		}
 	]
 }
