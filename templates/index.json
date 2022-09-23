@@ -220,6 +220,24 @@
     },
     "1662555391fc3bd10a": {
       "type": "sliderswiper",
+      "blocks": {
+        "70b00bb2-0d9a-46bf-bb55-fd5deee25796": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/silver-lamp-on-a-white-table-next-to-books.jpg"
+          }
+        },
+        "0852770a-1ccc-4dda-bf0e-d772700dc51f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/green-plants-grow-in-lines-on-rolling-hills.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "70b00bb2-0d9a-46bf-bb55-fd5deee25796",
+        "0852770a-1ccc-4dda-bf0e-d772700dc51f"
+      ],
       "settings": {
         "title": "Slider_practica"
       }
