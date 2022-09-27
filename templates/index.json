@@ -232,11 +232,18 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/green-plants-grow-in-lines-on-rolling-hills.jpg"
           }
+        },
+        "eb6f1e7a-1c10-41d9-8790-de3805cdff3c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aerial-photo-of-paved-road-through-the-desert.jpg"
+          }
         }
       },
       "block_order": [
         "70b00bb2-0d9a-46bf-bb55-fd5deee25796",
-        "0852770a-1ccc-4dda-bf0e-d772700dc51f"
+        "0852770a-1ccc-4dda-bf0e-d772700dc51f",
+        "eb6f1e7a-1c10-41d9-8790-de3805cdff3c"
       ],
       "settings": {
         "title": "Slider_practica"
