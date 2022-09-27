@@ -2,15 +2,69 @@
 {{ 'sliderswiper.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width isolate">
+	<h2 class="swiper__title">{{ section.settings.title | upcase }}</h2>
 	<div class="swiper">
-		<h2>{{ section.settings.title | escape }}</h2>
 		<div class="swiper-wrapper">
-
+			{%- for block in section.blocks -%}
+				<div class="swiper-slide">
+					<div class="slide">
+						<picture class="slide__bg">
+							<img
+								class="slide__img"
+								src="{{ block.settings.image | image_url }}"
+								loading="lazy"
+								alt="{{ block.settings.image.alt | escape }}"
+							>
+						</picture>
+						<h3 class="slide__title">{{ block.settings.title | upcase }}</h3>
+						<div class="slide__descr">{{ block.settings.descr | escape }}</div>
+					</div>
+				</div>
+			{%- endfor -%}
+		</div>
+		<div class="swiper__control">
+			<div class="swiper__nav">
+				<button class="swiper__button swiper__button--next" type="button">
+					{% render 'icon-arrow-left-next' %}
+				</button>
+				<button class="swiper__button swiper__button--prev" type="button">
+					{% render 'icon-arrow-right-prev' %}
+				</button>
+			</div>
+			<div class="swiper__pagination_wrap">
+				<div class="swiper__pagination"></div>
+			</div>
 		</div>
 	</div>
 </div>
 
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+<script>
+	window.addEventListener("load", () => {
+		const swiper = new Swiper('.swiper', {
+			// Optional parameters
+			speed: 400,
+			loop: true,
+
+			// If we need pagination
+			pagination: {
+				el: '.swiper__pagination',
+				type: 'bullets',
+			},
+
+			// Navigation arrows
+			navigation: {
+				nextEl: '.swiper__button--next',
+				prevEl: '.swiper__button--prev',
+			},
+
+			// And if we need scrollbar
+			scrollbar: {
+				el: '.swiper-scrollbar',
+			},
+		});
+	});
+</script>
 
 {% schema %}
 {
@@ -28,13 +82,25 @@
 	"blocks": [
 		{
 			"type": "slide",
-			"name": "slide_name",
+			"name": "slide_image",
 			"limit": 5,
 			"settings": [
 				{
 					"type": "image_picker",
 					"id": "image",
 					"label": "Image"
+				},
+				{
+					"type": "text",
+          "id": "title",
+					"label": "title",
+          "default": "Image title"
+				},
+				{
+					"type": "text",
+          "id": "descr",
+					"label": "descr",
+          "default": "Image descr"
 				}
 			]
 		}
